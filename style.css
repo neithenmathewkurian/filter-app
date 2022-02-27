@@ -1,0 +1,22 @@
+h1{
+    font-size: 30px !important;
+}
+.btn-danger:hover{
+    background-color: aquamarine;
+}
+canvas{
+    border:5px solid;
+    animation-name:example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+@keyframes example{
+    from{
+        border-color:rgb(247, 0, 255);
+    width: 400px;
+    }
+    to{
+        border-color:rgb(255, 0, 64);
+        width: 350px;
+    }
+}
