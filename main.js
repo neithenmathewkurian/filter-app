@@ -1,5 +1,7 @@
+noseX=0;
+noseY=0;
 function preload() {
-
+mustache=loadImage("https://i.postimg.cc/GhctPrnX/image-removebg-preview-1.png");
 }
 function setup() {
     canvas = createCanvas(300, 300);
@@ -13,6 +15,7 @@ function setup() {
 }
 function draw() {
     image(video, 0, 0, 300, 300)
+    image(mustache,noseX-30,noseY-30,80,80);
 }
 function take_picture() {
     save("mustash.png");
@@ -21,18 +24,16 @@ function modelLoaded() {
     console.log("success");
 
 }
-function gotResult(error, Result) {
-    if (error) {
-        console.log(error)
-    }
+function gotResult( Result) {
+    
 
-    else {
+   
         if (Result.length > 0) {
-            // console.log(Result)
-            console.log("upperlips x= " + Result[0].pose.upperlips.x);
-            console.log("upperlips y= " + Result[0].pose.upperlips.y);
+            noseX=Result[0].pose.nose.x;
+            noseY=Result[0].pose.nose.y;
+          console.log(noseX);
+          console.log(noseY);
+
         }
-
-
-    }
+    
 }
